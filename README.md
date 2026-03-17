@@ -1,7 +1,8 @@
-#Projeto Acadêmico: F1 Fuel Flow Gate 🏎️⏱️
-#Simulação de Sistemas de Tempo Real utilizando FreeRTOS e ESP32
+# Projeto Acadêmico: F1 Fuel Flow Gate
 
-📌 Sobre o Projeto
+## Simulação de Sistemas de Tempo Real utilizando FreeRTOS e ESP32
+
+ Sobre o Projeto
 Este projeto foi desenvolvido como requisito para a disciplina de Sistemas em Tempo Real (STR). O objetivo principal é demonstrar a aplicação prática de conceitos de Sistemas Operacionais de Tempo Real (RTOS) na resolução de problemas de sincronização, manipulação de sinais e concorrência.
 O cenário simula um sistema de injeção de combustível de um carro de Fórmula 1, inspirado em polêmicas reais de "burlas" no regulamento:
 
@@ -11,7 +12,7 @@ O cenário simula um sistema de injeção de combustível de um carro de Fórmul
 O sistema foi implementado na plataforma ESP32, utilizando a arquitetura do FreeRTOS para garantir o determinismo e a precisão temporal de hardware necessários para o sucesso da burla.
 
 --------------------------------------------------------------------------------
-⚙️ Arquitetura de Software e Conceitos de FreeRTOS Aplicados
+ Arquitetura de Software e Conceitos de FreeRTOS Aplicados
 A solução arquitetural do firmware utiliza técnicas avançadas do FreeRTOS para garantir o cumprimento dos prazos (deadlines) rigorosos da aplicação:
 1. Escalonamento e Prioridade de Tarefas (Tasks)
 O projeto foi dividido em duas tarefas principais independentes, ambas alocadas no Core 0 para garantir a compatibilidade com arquiteturas single-core (como o ESP32-C3):
@@ -34,7 +35,7 @@ Além disso:
 
 
 --------------------------------------------------------------------------------
-🛠️ Hardware e Pinout (ESP32)
+ Hardware e Pinout (ESP32)
 O projeto mapeia os seguintes periféricos de entrada e saída:
 Componente
 	
@@ -80,7 +81,7 @@ Força uma falha de sincronização no sistema do atuador.
 INPUT_PULLUP com ISR (CHANGE)
 
 --------------------------------------------------------------------------------
-🚀 Lógica de Funcionamento e Modos de Operação
+ Lógica de Funcionamento e Modos de Operação
 
     Modo Legal (Normal): O fluxo de combustível se mantém constante em 100 kg/h. O sensor da FIA realiza leituras a cada 30ms e valida o status, mantendo o LED Verde aceso.
     Modo Cheat (Burla Ativa): Ao pressionar o Botão Cheat, o atuador passa a elevar o fluxo para 120 kg/h imediatamente após cada leitura da FIA. O atuador arma um Hardware Timer (timerAtuador) para interromper a injeção extra (aos 25ms), retornando o fluxo para 100 kg/h estritamente antes do próximo ciclo de 30ms da FIA. A infração passa despercebida.
@@ -88,7 +89,7 @@ INPUT_PULLUP com ISR (CHANGE)
 
 
 --------------------------------------------------------------------------------
-🖥️ Como Executar a Simulação
+ Como Executar a Simulação
 
     O projeto pode ser executado diretamente na plataforma Wokwi Simulator ou compilado via Arduino IDE (com suporte ao núcleo do ESP32 versão 3.x).
     Na Arduino IDE, selecione a placa "ESP32C3 Dev Module" (ou equivalente compatível).
