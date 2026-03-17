@@ -33,54 +33,6 @@ Além disso:
     Variáveis volatile: Atributos compartilhados entre ISRs e Tasks (como fuel_flow, cheatMode e forceFail) receberam a diretiva volatile para evitar otimizações do compilador e garantir a integridade da leitura na memória.
     Debounce em Software: A interrupção do botão que ativa o modo "Cheat" (isrCheat) conta com uma rotina de debouncing baseada na função millis() com um limiar de 200ms, mitigando ruídos mecânicos típicos de hardware físico.
 
-
---------------------------------------------------------------------------------
- Hardware e Pinout (ESP32)
-O projeto mapeia os seguintes periféricos de entrada e saída:
-Componente
-	
-Pino (GPIO)
-	
-Função / Comportamento
-	
-Configuração
-LED Verde
-	
-18
-	
-Status OK: Acende quando o fluxo detectado pela FIA é ≤ 100 kg/h.
-	
-OUTPUT
-LED Vermelho
-	
-19
-	
-Status Violação: Acende quando a FIA detecta fluxo > 100 kg/h.
-	
-OUTPUT
-LED Azul/Amarelo
-	
-4
-	
-Indicador de Cheat: Acende quando a burla está ativa no sistema.
-	
-OUTPUT
-Botão 1 (Cheat)
-	
-8
-	
-Ativa/Desativa o sistema de burla no fluxo de combustível.
-	
-INPUT_PULLUP com ISR (FALLING)
-Botão 2 (Fail)
-	
-9
-	
-Força uma falha de sincronização no sistema do atuador.
-	
-INPUT_PULLUP com ISR (CHANGE)
-
---------------------------------------------------------------------------------
  Lógica de Funcionamento e Modos de Operação
 
     Modo Legal (Normal): O fluxo de combustível se mantém constante em 100 kg/h. O sensor da FIA realiza leituras a cada 30ms e valida o status, mantendo o LED Verde aceso.
@@ -89,12 +41,8 @@ INPUT_PULLUP com ISR (CHANGE)
 
 
 --------------------------------------------------------------------------------
- Como Executar a Simulação
-
-    O projeto pode ser executado diretamente na plataforma Wokwi Simulator ou compilado via Arduino IDE (com suporte ao núcleo do ESP32 versão 3.x).
-    Na Arduino IDE, selecione a placa "ESP32C3 Dev Module" (ou equivalente compatível).
-    O monitor serial deve ser configurado para o Baud Rate de 115200.
-    Monitore a saída ou utilize o Serial Plotter para observar os gráficos de variação da variável fuel_flow interagindo com as deadlines de leitura. O código otimiza o uso da memória ao deletar a tarefa ociosa loop na inicialização (vTaskDelete(NULL)).
+ Hardware e Simulação
+  O pojeto está disponível no Wokwi: https://wokwi.com/projects/458693423028865025
 
 
 --------------------------------------------------------------------------------
