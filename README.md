@@ -1,5 +1,6 @@
-Projeto Acadêmico: F1 Fuel Flow Gate 🏎️⏱️
-Simulação de Sistemas de Tempo Real utilizando FreeRTOS e ESP32
+#Projeto Acadêmico: F1 Fuel Flow Gate 🏎️⏱️
+#Simulação de Sistemas de Tempo Real utilizando FreeRTOS e ESP32
+
 📌 Sobre o Projeto
 Este projeto foi desenvolvido como requisito para a disciplina de Sistemas em Tempo Real (STR). O objetivo principal é demonstrar a aplicação prática de conceitos de Sistemas Operacionais de Tempo Real (RTOS) na resolução de problemas de sincronização, manipulação de sinais e concorrência.
 O cenário simula um sistema de injeção de combustível de um carro de Fórmula 1, inspirado em polêmicas reais de "burlas" no regulamento:
