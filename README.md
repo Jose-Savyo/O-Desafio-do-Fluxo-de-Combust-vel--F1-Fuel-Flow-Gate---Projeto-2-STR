@@ -49,7 +49,9 @@ Além disso:
 
 --------------------------------------------------------------------------------
 Referências usadas
+
  https://github.com/ShawnHymel/introduction-to-rtos.git
+ 
  https://github.com/carloseduardofilho-cloud/Sistema_de_Barbearia_Prioridade_Clientes-VIP.git
 --------------------------------------------------------------------------------
 Vídeo de Apresentação
