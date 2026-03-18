@@ -46,7 +46,12 @@ Além disso:
 
 --------------------------------------------------------------------------------
  Hardware e Simulação
+ 
   O pojeto está disponível no Wokwi: https://wokwi.com/projects/458693423028865025
+
+Vídeo de apresentação do proheto
+
+  https://youtu.be/vKN3mFlQ5z4
 
 --------------------------------------------------------------------------------
 Referências usadas
