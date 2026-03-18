@@ -33,16 +33,25 @@ Além disso:
     Variáveis volatile: Atributos compartilhados entre ISRs e Tasks (como fuel_flow, cheatMode e forceFail) receberam a diretiva volatile para evitar otimizações do compilador e garantir a integridade da leitura na memória.
     Debounce em Software: A interrupção do botão que ativa o modo "Cheat" (isrCheat) conta com uma rotina de debouncing baseada na função millis() com um limiar de 200ms, mitigando ruídos mecânicos típicos de hardware físico.
 
+<img width="2560" height="1847" alt="image" src="https://github.com/user-attachments/assets/4c4486c1-9763-49e9-91b4-4f2583552f55" />
+
  Lógica de Funcionamento e Modos de Operação
 
     Modo Legal (Normal): O fluxo de combustível se mantém constante em 100 kg/h. O sensor da FIA realiza leituras a cada 30ms e valida o status, mantendo o LED Verde aceso.
     Modo Cheat (Burla Ativa): Ao pressionar o Botão Cheat, o atuador passa a elevar o fluxo para 120 kg/h imediatamente após cada leitura da FIA. O atuador arma um Hardware Timer (timerAtuador) para interromper a injeção extra (aos 25ms), retornando o fluxo para 100 kg/h estritamente antes do próximo ciclo de 30ms da FIA. A infração passa despercebida.
     Modo Force Fail (Falha Imposta): Ao acionar o botão de falha, o tempo de injeção extra do atuador é prolongado para 30ms. Isso causa um atraso proposital (uma "condição de corrida"), fazendo com que a janela do atuador se sobreponha à leitura da FIA. O sensor da FIA capta o valor de 120 kg/h em memória, detecta a infração, e aciona o LED Vermelho no painel.
 
+<img width="547" height="343" alt="image" src="https://github.com/user-attachments/assets/cfe4ca85-b8a4-4f34-b4e0-244f64ebf88e" />
 
 --------------------------------------------------------------------------------
  Hardware e Simulação
   O pojeto está disponível no Wokwi: https://wokwi.com/projects/458693423028865025
 
-
+--------------------------------------------------------------------------------
+Referências usadas
+ https://github.com/ShawnHymel/introduction-to-rtos.git
+ https://github.com/carloseduardofilho-cloud/Sistema_de_Barbearia_Prioridade_Clientes-VIP.git
+--------------------------------------------------------------------------------
+Vídeo de Apresentação
+ 
 --------------------------------------------------------------------------------
