@@ -49,7 +49,7 @@ Além disso:
  
   O pojeto está disponível no Wokwi: https://wokwi.com/projects/458693423028865025
 
-Vídeo de apresentação do proheto
+Vídeo de apresentação do projeto
 
   https://youtu.be/vKN3mFlQ5z4
 
