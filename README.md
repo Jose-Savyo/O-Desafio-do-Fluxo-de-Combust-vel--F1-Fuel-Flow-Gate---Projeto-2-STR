@@ -35,6 +35,7 @@ Além disso:
 
 <img width="2560" height="1847" alt="image" src="https://github.com/user-attachments/assets/4c4486c1-9763-49e9-91b4-4f2583552f55" />
 
+--------------------------------------------------------------------------------
  Lógica de Funcionamento e Modos de Operação
 
     Modo Legal (Normal): O fluxo de combustível se mantém constante em 100 kg/h. O sensor da FIA realiza leituras a cada 30ms e valida o status, mantendo o LED Verde aceso.
